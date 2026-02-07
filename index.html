@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -111,6 +111,33 @@
       margin-top:10px;
     }
 
+    /* ===== الإضافة فقط ===== */
+    .btn-connect{
+      background:linear-gradient(135deg,#38bdf8,#22c55e);
+      color:#022c22;
+      margin-bottom:16px;
+      font-weight:800;
+    }
+
+    .remember{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:14px;
+      font-size:14px;
+      color:var(--muted);
+      cursor:pointer;
+      user-select:none;
+    }
+
+    .remember input{
+      accent-color:#22c55e;
+      width:16px;
+      height:16px;
+      margin:0;
+    }
+    /* ====================== */
+
     .nav{
       display:flex;
       gap:10px;
@@ -177,6 +204,14 @@
       <p>يسمح فقط بإيميلات ahmedmarketing.cloud</p>
       <input id="emailInput" placeholder="name@ahmedmarketing.cloud">
       <input id="codeInput" type="password" placeholder="الرمز">
+
+      <!-- ===== الإضافة فقط ===== -->
+      <label class="remember">
+        <input type="checkbox" id="rememberMe">
+        <span>تذكرني لمدة 30 يوم</span>
+      </label>
+      <!-- ====================== -->
+
       <button class="btn-main" onclick="login()">دخول</button>
     </div>
   </div>
@@ -190,6 +225,17 @@
     </div>
 
     <div class="panel">
+
+      <!-- ===== الإضافة فقط ===== -->
+      <a
+        href="https://app.upload-post.com/connect?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyaG0ud29yazFAZ21haWwuY29tIiwicHJvZmlsZV91c2VybmFtZSI6ImFsbGFmaXRuaXMiLCJleHAiOjE3NzA1OTk3MjgsImlhdCI6MTc3MDQyNjkyOH0.Z_KiS7KrLX4p_yAXgPFh-0O76fTRzbpAl8MILrOhbNc"
+        target="_blank"
+      >
+        <button class="btn-connect">
+          🔗 ربط حسابات مواقع التواصل الاجتماعي
+        </button>
+      </a>
+      <!-- ====================== -->
 
       <div class="nav">
         <button onclick="go('publish')">النشر</button>
@@ -301,7 +347,7 @@ async function publish(){
 
   try{
     const res = await fetch(
-      "https://n8n.srv1099752.hstgr.cloud/webhook-test/vip2024",
+      "https://n8n.srv1099752.hstgr.cloud/webhook-test/upload-video12",
       {
         method:"POST",
         body:formData
