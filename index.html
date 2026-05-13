@@ -674,10 +674,7 @@
           <div class="form-group">
             <label><i class="fas fa-file-video"></i> اختر الملف (صورة أو فيديو)</label>
             <input type="file" id="mediaInput" accept="image/*,video/*" onchange="checkFileSize(this)">
-            <div class="pro-badge">
-              <i class="fas fa-check-circle"></i>
-              <strong>✅ Pro Plan:</strong> الحد الأقصى: <strong>5 GB</strong>
-            </div>
+
             <div class="warning-note">
               <i class="fas fa-info-circle"></i>
               <strong>ملاحظة:</strong> فيديوهات iPhone (MOV) قد لا تعمل على Instagram.
@@ -980,24 +977,14 @@
         document.getElementById('navAdmin').style.display = 'none';
       }
 
-      // Connect button with user's token
-      const connectToken = currentUser.connect_token || '';
-      if (connectToken) {
-        document.getElementById('connectBtnWrapper').innerHTML = `
-          <a href="https://app.upload-post.com/connect?token=${connectToken}" target="_blank" style="text-decoration:none;display:block;">
-            <button class="btn btn-connect">
-              <span><i class="fas fa-link"></i> ربط حسابات مواقع التواصل الاجتماعي</span>
-            </button>
-          </a>
-        `;
-      } else {
-        document.getElementById('connectBtnWrapper').innerHTML = `
-          <div class="info-alert" style="margin-bottom:20px;">
-            <i class="fas fa-info-circle"></i>
-            لم يتم تخصيص رابط ربط الحسابات بعد. تواصل مع المدير.
-          </div>
-        `;
-      }
+      // Connect button - always show
+      document.getElementById('connectBtnWrapper').innerHTML = `
+        <a href="https://app.upload-post.com/connect?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyaG0ud29yazFAZ21haWwuY29tIiwicHJvZmlsZV91c2VybmFtZSI6ImhhbW9kIiwiZXhwIjoxNzc4ODAzMTI0LCJpYXQiOjE3Nzg2MzAzMjR9.E3jDuclzue6bcPQAxa5LTO8pk59kF8gS_o2Vizuly7c" target="_blank" style="text-decoration:none;display:block;">
+          <button class="btn btn-connect">
+            <span><i class="fas fa-link"></i> اربط حساباتك</span>
+          </button>
+        </a>
+      `;
 
       goPage('publish');
     }
